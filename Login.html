@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+    body{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+        background: linear-gradient(90deg, hsla(169, 76%, 48%, 1) 0%, hsla(67, 87%, 82%, 1) 100%);
+    }
+    .form-group{
+     display: flex;
+     height: 100vh;
+     justify-content: center;
+     align-items: center;
+        
+    }
+
+    .form{
+        height: auto;
+        width: 350px;
+        background: linear-gradient(90deg, hsla(287, 23%, 65%, 1) 0%, hsla(23, 64%, 75%, 1) 100%);
+    }
+
+    .form-start{
+        display: block;
+       text-align: left;
+       padding: 15px;
+
+    }
+    .email-field{
+        padding: 7px 40px;
+        border: none;
+       background: transparent;
+       text-decoration: none;
+        outline: none;
+        border: 1px solid rgb(126, 241, 245);
+         font-size: large;
+         position: relative;
+         margin-bottom: 5px;
+        color: white;
+    }
+    .password-fild{
+        padding: 7px 40px;
+        border: none;
+       background: transparent;
+       text-decoration: none;
+        outline: none;
+        border: 1px solid rgb(126, 241, 245);
+         font-size: large;
+         position: relative;
+         margin-bottom: 5px;
+        color: white; 
+    }
+ 
+
+    .email-label{
+     position: relative;
+        top: 27px;
+       left: 5px;
+       transition: 0.50s;
+    }
+
+    .password-label{
+        position: relative;
+        top: 27px;
+       left: 5px;
+       transition: 0.50s; 
+    }
+    
+   .submit{
+
+    padding: 7px 50px;
+    border-radius: 5px;
+    background-color: rgb(241, 247, 250);
+    outline: none;
+    border: none;
+   }
+   .submit:hover{
+    background-color: orangered;
+    color: aliceblue;
+    transition: 0.5s;
+   }
+
+
+</style>
+<body>
+    <div class="form-group">
+    <div class="form">
+
+            <form action="" class="form-start">
+                <label class="email-label" id="label" for="">email</label><br>
+                <input class="email-field" id="email" type="email" spellcheck="false" onkeyup="validateForm()"><br>
+                <span class="email-error" id="error">Please Enter Valid Email</span><br><br>
+                <label class="password-label" id="pass_label" for="">password</label><br>
+                <input class="password-fild" id="password" type="password" onkeyup="validatePass()"><br>
+                <span class="Pass-error" id="perror"></span><br><br>
+                <input class="submit" type="submit">
+            </form>
+
+    </div>
+
+    </div>
+
+    <script>
+        var emailLabel=document.getElementById("label");
+        var emailFild=document.getElementById("email");
+        var emailError=document.getElementById("error");
+
+       function validateForm(){
+        emailLabel.style.top="-9px";
+        emailLabel.style.color="white";
+        emailError.style.color="red";
+
+        if(emailFild.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
+         
+            emailError.style.color="green";
+            emailError.style.fontSize="12px";
+            emailError.innerHTML="Valid";
+        }else{
+            emailError.style.color="red"; 
+            emailError.innerHTML="Please Enter Valid Email";
+        }
+    }
+
+       function validatePass(){
+        var passLabel=document.getElementById("pass_label");
+        passLabel.style.top ="-9px";
+        passLabel.style.color="white";
+
+        if(password.value.length>=6){
+            perror.innerHTML="valid"; 
+            perror.style.color="green";
+        }
+        else{
+            perror.innerHTML="Enter above 6 digit";  
+            perror.style.color="red";
+        }
+
+        }
+        
+    </script>
+</body>
+</html>
